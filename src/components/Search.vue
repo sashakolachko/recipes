@@ -30,12 +30,11 @@ export default {
   },
   data: () => ({
     recipes: [],
-    keyWord: "",
-    currentPage: 1
+    keyWord: ""
   }),
   methods: {
     searchKeyWord() {
-      axios.get(`https://www.food2fork.com/api/search?key=f07c3692e6f94650d235ac50898e99c7&q=${this.keyWord}&page=${this.currentPage}`)
+      axios.get(`https://www.food2fork.com/api/search?key=29c2b83abcb7c2b46aa5fe2f796fd3ec&q=${this.keyWord}`)
         .then(response => response.data.recipes.map(item => {
           this.recipes.push({
             publisher: item.publisher,
@@ -71,13 +70,12 @@ export default {
   }
   .button{
     width: 30%;
-    background-color:#fff500;
+    background-color:#f92a75;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
   .button:hover{
-    background-color:#f92a75;
     color:#fff;
   }
   .recipes{
